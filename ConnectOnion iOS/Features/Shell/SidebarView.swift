@@ -20,60 +20,9 @@ struct SidebarView: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 18) {
-                if agents.isEmpty && conversations.isEmpty {
-                    SidebarEmptyState {
-                        tick()
-                        onAddAgent()
-                    }
-                    .transition(AppMotion.panelTransition)
-                }
-
-                if !agents.isEmpty {
-                    SidebarSectionTitle(title: "Agents")
-                        .transition(AppMotion.panelTransition)
-
-                    ForEach(agents) { agent in
-                        AgentSidebarRow(
-                            agent: agent,
-                            info: infoByAddress[agent.address],
-                            isSelected: selectedAgentAddress == agent.address && selectedConversationID == nil,
-                            onSelect: { select(agent: agent) },
-                            onNewChat: {
-                                tick()
-                                onNewChat(agent)
-                            },
-                            onRename: {
-                                tick()
-                                onRenameAgent(agent)
-                            },
-                            onDelete: {
-                                tick()
-                                onDeleteAgent(agent)
-                            }
-                        )
-                        .transition(AppMotion.panelTransition)
-                    }
-                }
-
-                if !conversations.isEmpty {
-                    SidebarSectionTitle(title: "Chats")
-                        .transition(AppMotion.panelTransition)
-
-                    ForEach(conversations) { conversation in
-                        ConversationSidebarRow(
-                            conversation: conversation,
-                            agentName: agentName(for: conversation.agentAddress),
-                            isSelected: selectedConversationID == conversation.id,
-                            onSelect: { select(conversation: conversation) },
-                            onDelete: {
-                                tick()
-                                onDeleteConversation(conversation)
-                            }
-                        )
-                        .accessibilityIdentifier(AccessibilityID.conversation(conversation.id))
-                        .transition(AppMotion.panelTransition)
-                    }
-                }
+                emptyStateSection
+                agentsSection
+                chatsSection
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 14)
@@ -93,8 +42,7 @@ struct SidebarView: View {
                 .labelStyle(.iconOnly)
                 .accessibilityIdentifier(AccessibilityID.settingsButton)
             }
-            .visibilityPriority(.high)
-            .contentMarginsRemoved()
+            // Note: .visibilityPriority/.contentMarginsRemoved are iOS 27-only; omitted for iOS 26 build.
 
             ToolbarItem(placement: .principal) {
                 Text("ConnectOnion")
@@ -102,8 +50,7 @@ struct SidebarView: View {
                     .lineLimit(1)
             }
         }
-        .toolbarMinimizeBehavior(.onScrollDown, for: .navigationBar)
-        .toolbarMinimizationSafeAreaAdjustment(.enabled, for: .navigationBar)
+        // Note: .toolbarMinimizeBehavior/.toolbarMinimizationSafeAreaAdjustment are iOS 27-only; omitted for iOS 26 build.
         .safeAreaInset(edge: .bottom, alignment: .trailing) {
             if !agents.isEmpty {
                 NewChatFloatingButton {
@@ -117,6 +64,70 @@ struct SidebarView: View {
         }
         .sensoryFeedback(.selection, trigger: feedbackTrigger)
         .background(.background)
+    }
+
+    @ViewBuilder
+    private var emptyStateSection: some View {
+        if agents.isEmpty && conversations.isEmpty {
+            SidebarEmptyState {
+                tick()
+                onAddAgent()
+            }
+            .transition(AppMotion.panelTransition)
+        }
+    }
+
+    @ViewBuilder
+    private var agentsSection: some View {
+        if !agents.isEmpty {
+            SidebarSectionTitle(title: "Agents")
+                .transition(AppMotion.panelTransition)
+
+            ForEach(agents) { agent in
+                AgentSidebarRow(
+                    agent: agent,
+                    info: infoByAddress[agent.address],
+                    isSelected: selectedAgentAddress == agent.address && selectedConversationID == nil,
+                    onSelect: { select(agent: agent) },
+                    onNewChat: {
+                        tick()
+                        onNewChat(agent)
+                    },
+                    onRename: {
+                        tick()
+                        onRenameAgent(agent)
+                    },
+                    onDelete: {
+                        tick()
+                        onDeleteAgent(agent)
+                    }
+                )
+                .transition(AppMotion.panelTransition)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var chatsSection: some View {
+        if !conversations.isEmpty {
+            SidebarSectionTitle(title: "Chats")
+                .transition(AppMotion.panelTransition)
+
+            ForEach(conversations) { conversation in
+                ConversationSidebarRow(
+                    conversation: conversation,
+                    agentName: agentName(for: conversation.agentAddress),
+                    isSelected: selectedConversationID == conversation.id,
+                    onSelect: { select(conversation: conversation) },
+                    onDelete: {
+                        tick()
+                        onDeleteConversation(conversation)
+                    }
+                )
+                .accessibilityIdentifier(AccessibilityID.conversation(conversation.id))
+                .transition(AppMotion.panelTransition)
+            }
+        }
     }
 
     private func select(agent: AgentConfigRecord) {
