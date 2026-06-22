@@ -1,0 +1,5 @@
+# Heavy / regenerable test artifacts — keep docs, GIF and PNG stills in git, not these.
+*.mp4
+*.mov
+*.xcresult/
+.DS_Store
