@@ -100,8 +100,13 @@ struct Sprint2AttachmentComposerTests {
         #expect(message[string: "to"] == testAgentAddress)
         #expect(message[string: "from"]?.hasPrefix("0x") == true)
         #expect(message[string: "signature"]?.count == 128)
-        #expect(message["images"]?.arrayValue?.count == 1)
-        #expect(message["files"]?.arrayValue?.count == 1)
+        // Photos are intentionally sent through the host's file channel. Some deployed
+        // hosts crash in their slash-command hook when the `images` channel creates
+        // multimodal list content before the hook runs.
+        #expect(message["images"] == nil)
+        #expect(message["files"]?.arrayValue?.count == 2)
+        #expect(message["files"]?.arrayValue?.first?.objectValue?[string: "name"] == "image-1.png")
+        #expect(message["files"]?.arrayValue?.first?.objectValue?[string: "data"] == "data:image/png;base64,abc")
 
         let payload = message["payload"]?.objectValue
         #expect(payload?[string: "prompt"] == input.transmittedPrompt)

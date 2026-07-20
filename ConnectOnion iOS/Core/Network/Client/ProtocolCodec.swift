@@ -45,11 +45,9 @@ struct ProtocolCodec {
             "timestamp": .number(Double(timestamp))
         ]
 
-        if !input.images.isEmpty {
-            message["images"] = .array(input.images.map(JSONValue.string))
-        }
-        if !input.files.isEmpty {
-            message["files"] = .array(input.files.map { file in
+        let files = protocolFiles(for: input)
+        if !files.isEmpty {
+            message["files"] = .array(files.map { file in
                 .object([
                     "name": .string(file.name),
                     "data": .string(file.dataURL)
@@ -77,6 +75,40 @@ struct ProtocolCodec {
         message["timestamp"] = .number(Double(signed.timestamp))
 
         return message
+    }
+
+    /// Uses ConnectOnion's file-upload channel for photos as a compatibility measure.
+    ///
+    /// Some deployed agent hosts enable a skill hook that assumes every user message is
+    /// text. Their `images` channel turns the message into a multimodal content array
+    /// before that hook runs, causing the host to fail before invoking the agent. Files
+    /// remain text-backed and the host makes their paths available to the agent instead.
+    private func protocolFiles(for input: AgentInput) -> [FileAttachment] {
+        let imageFiles = input.images.enumerated().map { index, dataURL in
+            FileAttachment(
+                name: "image-\(index + 1).\(imageFilenameExtension(for: dataURL))",
+                type: imageMIMEType(for: dataURL),
+                size: AttachmentEncoding.decodedData(from: dataURL)?.count ?? 0,
+                dataURL: dataURL
+            )
+        }
+        return imageFiles + input.files
+    }
+
+    private func imageMIMEType(for dataURL: String) -> String {
+        guard dataURL.hasPrefix("data:image/") else { return "image/jpeg" }
+        let prefix = dataURL.dropFirst("data:".count)
+        return String(prefix.prefix { $0 != ";" && $0 != "," })
+    }
+
+    private func imageFilenameExtension(for dataURL: String) -> String {
+        switch imageMIMEType(for: dataURL) {
+        case "image/png": "png"
+        case "image/gif": "gif"
+        case "image/webp": "webp"
+        case "image/heic": "heic"
+        default: "jpg"
+        }
     }
 
     func onboardSubmit(inviteCode: String?, payment: Double?) throws -> [String: JSONValue] {
