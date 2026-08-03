@@ -50,7 +50,6 @@ enum AccessibilityID {
     static let latestMessageEditCancelButton = "connectonion.chat.latest-message.edit.cancel"
     static let latestMessageEditSaveButton = "connectonion.chat.latest-message.edit.save"
     static let chatAttachmentButton = "connectonion.chat.attachment.button"
-    static let chatAttachmentPhotoButton = "connectonion.chat.attachment.photo"
     static let chatAttachmentFilesButton = "connectonion.chat.attachment.files"
     static let chatAttachmentError = "connectonion.chat.attachment.error"
     static let chatVoiceButton = "connectonion.chat.voice.button"

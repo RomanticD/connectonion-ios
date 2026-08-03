@@ -43,7 +43,6 @@ final class ConnectOnion_iOSUITests: XCTestCase {
     private let latestMessageEditCancelButtonID = "connectonion.chat.latest-message.edit.cancel"
     private let latestMessageEditSaveButtonID = "connectonion.chat.latest-message.edit.save"
     private let chatAttachmentButtonID = "connectonion.chat.attachment.button"
-    private let chatAttachmentPhotoButtonID = "connectonion.chat.attachment.photo"
     private let chatAttachmentFilesButtonID = "connectonion.chat.attachment.files"
     private let newChatInAgentButtonID = "connectonion.agent.newchat.button"
     private let seededAgentID = "connectonion.agent.0xf5ff043a9c5df95eac9387908dea87beb7b59c2a3b04787e3222fdf8209cdee1"
@@ -157,16 +156,17 @@ final class ConnectOnion_iOSUITests: XCTestCase {
     }
 
     @MainActor
-    func testChatAttachmentMenuExposesPhotoAndFileOptions() throws {
+    func testChatAttachmentMenuOnlyExposesAddFiles() throws {
         let app = launchUITestApp()
         openSeededConversation(in: app)
 
         XCTAssertTrue(app.anyElement(chatAttachmentButtonID).exists)
         tapElement(chatAttachmentButtonID, in: app)
 
-        XCTAssertTrue(app.anyElement(chatAttachmentPhotoButtonID).waitForExistence(timeout: 5), app.debugDescription)
-        XCTAssertTrue(app.anyElement(chatAttachmentFilesButtonID).exists, app.debugDescription)
-        // The photo/file options above are the assertion. iOS 26's attachment menu has no explicit
+        XCTAssertTrue(app.anyElement(chatAttachmentFilesButtonID).waitForExistence(timeout: 5), app.debugDescription)
+        XCTAssertFalse(app.staticTexts["All photos"].exists)
+        XCTAssertFalse(app.staticTexts["Camera"].exists)
+        // The single file option above is the assertion. iOS 26's attachment menu has no explicit
         // "Cancel", so dismiss best-effort only if that affordance is present.
         if app.buttons["Cancel"].exists {
             app.buttons["Cancel"].tap()

@@ -2,44 +2,21 @@
 //  ComposerAttachmentPreviews.swift
 //
 //  Purpose: Implements ComposerAttachmentPreviews for the Features/Composer module.
-//  Collaborates with: AttachmentSheet, AttachmentStrip, CameraPicker, ChatInputBar, RecentPhotos, SkillCommandPalette.
+//  Collaborates with: AttachmentSheet, AttachmentStrip, ChatInputBar, SkillCommandPalette.
 //  References: Apple Swift documentation (https://developer.apple.com/documentation/swift) and
 //               the project architecture described in README.md where applicable.
 //
 //  This file is part of the ConnectOnion iOS application.
 //
 import SwiftUI
-import UIKit
-
-struct ImageAttachmentDraft: Identifiable {
-    let id: UUID
-    var name: String
-    var size: Int
-    var dataURL: String
-    var image: UIImage?
-
-    init(id: UUID = UUID(), name: String, size: Int, dataURL: String, image: UIImage? = nil) {
-        self.id = id
-        self.name = name
-        self.size = size
-        self.dataURL = dataURL
-        self.image = image
-    }
-}
 
 struct ComposerAttachmentPreviewStrip: View {
-    var images: [ImageAttachmentDraft]
     var files: [FileAttachment]
-    var onRemoveImage: (UUID) -> Void
     var onRemoveFile: (String) -> Void
 
     var body: some View {
         ScrollView(.horizontal) {
             HStack(spacing: 10) {
-                ForEach(images) { image in
-                    ImageAttachmentPreview(image: image, onRemove: onRemoveImage)
-                }
-
                 ForEach(files) { file in
                     FileAttachmentPreview(file: file, onRemove: onRemoveFile)
                 }
@@ -71,40 +48,6 @@ private struct AttachmentRemoveButton: View {
         .buttonStyle(.plain)
         .accessibilityLabel(accessibilityLabel)
         .accessibilityIdentifier(identifier)
-    }
-}
-
-private struct ImageAttachmentPreview: View {
-    var image: ImageAttachmentDraft
-    var onRemove: (UUID) -> Void
-
-    private let side: CGFloat = 88
-
-    var body: some View {
-        Group {
-            if let uiImage = image.image {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFill()
-            } else {
-                ZStack {
-                    Color(.systemGray6)
-                    Image(systemName: "photo")
-                        .appFont(.title3)
-                        .foregroundStyle(.secondary)
-                }
-            }
-        }
-        .frame(width: side, height: side)
-        .clipShape(.rect(cornerRadius: 16))
-        .overlay(alignment: .topTrailing) {
-            AttachmentRemoveButton(
-                accessibilityLabel: "Remove \(image.name)",
-                identifier: AccessibilityID.attachmentRemove(image.id.uuidString)
-            ) {
-                onRemove(image.id)
-            }
-        }
     }
 }
 
@@ -171,15 +114,7 @@ func formatFileSize(_ bytes: Int) -> String {
 
 #Preview("Attachment Preview Strip") {
     ComposerAttachmentPreviewStrip(
-        images: [
-            ImageAttachmentDraft(
-                name: "Photo 1.png",
-                size: 2400,
-                dataURL: "data:image/png;base64,iVBORw0KGgo="
-            )
-        ],
         files: PreviewFixtures.sampleFiles,
-        onRemoveImage: { _ in },
         onRemoveFile: { _ in }
     )
     .padding()
