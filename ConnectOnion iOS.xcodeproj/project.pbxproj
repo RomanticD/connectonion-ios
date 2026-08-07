@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 110;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		07FA00012FDBE00000000001 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 07FA00032FDBE00000000003 /* Factory */; };
-		07FA10112FDBE00000000021 /* Onion.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FA10122FDBE00000000022 /* Onion.png */; };
 		07FA100C2FDBE0000000001C /* ConnectOnionWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 07FA10032FDBE00000000013 /* ConnectOnionWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		07FA10112FDBE00000000021 /* Onion.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FA10122FDBE00000000022 /* Onion.png */; };
 		07FB00012FDBE00000000001 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 07FB00032FDBE00000000003 /* Lottie */; };
 		07FC00012FDBE00000000001 /* Highlighter in Frameworks */ = {isa = PBXBuildFile; productRef = 07FC00032FDBE00000000003 /* Highlighter */; };
 /* End PBXBuildFile section */

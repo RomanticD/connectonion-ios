@@ -120,6 +120,14 @@ scripts/                     # run_e2e.sh — one-command real-agent E2E
 To connect to a real agent, host one with the Python framework (`pip install connectonion`,
 `co auth`, then `host()`), and add its `0x…` address + endpoint in the app.
 
+## Installation manual
+
+For a clean, assessor-focused setup and verification path, see the
+[installation manual](docs/INSTALLATION_MANUAL.md) and its accompanying PDF
+(`docs/INSTALLATION_MANUAL.pdf`). As a native iOS application, ConnectOnion is
+run on an iOS simulator or device rather than in Docker; the manual records the
+assessment arrangement and the no-external-service mock UI path.
+
 ## Testing
 
 | Suite | What | How |
