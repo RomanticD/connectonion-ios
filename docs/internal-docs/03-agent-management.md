@@ -11,6 +11,18 @@ inputs, and entry points into conversations.
 A user should be able to add the correct agent, recognise it later, understand its current
 capabilities, and start a conversation without needing to understand the directory protocol.
 
+## App evidence
+
+Agent entry is a reviewable form with a QR affordance, while simulator/device capability limits are
+reported as an explicit scanner fallback rather than an implicit failure.
+
+<div>
+  <img src="../assets/app-screenshots/09-add-agent-qr-setup.png" alt="Add agent form with QR entry" width="220">
+  <img src="../assets/app-screenshots/10-qr-scanner-photo-fallback.png" alt="QR scanner unavailable with Choose Photo fallback" width="220">
+</div>
+
+*Figure: add-agent review flow (left) and QR capability fallback (right).*
+
 ## Scope
 
 - manual agent entry;

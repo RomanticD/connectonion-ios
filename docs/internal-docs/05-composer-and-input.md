@@ -11,6 +11,15 @@ budgeting, and the send affordance used by new and existing conversations.
 Users should be able to prepare a supported request confidently, understand why an input cannot be
 sent, and avoid losing their draft because an optional input source fails.
 
+## App evidence
+
+The conversation surface shows the attachment strip above the user turn and keeps the reply
+composer available below the timeline.
+
+<p><img src="../assets/app-screenshots/05-approval-card.png" alt="Conversation with README and image attachments and reply composer" width="260"></p>
+
+*Figure: attachment-aware input context and the composer used for the next response.*
+
 ## Scope
 
 - multiline text input;

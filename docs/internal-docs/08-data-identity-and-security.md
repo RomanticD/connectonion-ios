@@ -5,6 +5,19 @@
 This document defines local data ownership, persistence behavior, client identity, signing-key
 handling, privacy boundaries, deletion expectations, and migration responsibilities.
 
+## App evidence
+
+The add-agent surface exposes the user-entered address and endpoint, while the agent home shows the
+persisted agent/conversation surface that depends on local storage. Neither screenshot exposes or
+proves the private-key boundary; Keychain and signing requirements remain source- and review-owned.
+
+<div>
+  <img src="../assets/app-screenshots/09-add-agent-qr-setup.png" alt="Agent address and endpoint entry fields" width="220">
+  <img src="../assets/app-screenshots/02-agent-home-conversations.png" alt="Persisted agent and conversation surface" width="220">
+</div>
+
+*Figure: local configuration entry (left) and persisted product surface (right).*
+
 ## Scope
 
 - SwiftData agent and conversation records;

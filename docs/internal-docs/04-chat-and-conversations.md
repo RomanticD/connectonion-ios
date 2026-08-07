@@ -12,6 +12,18 @@ Users should experience a durable conversation rather than a raw WebSocket sessi
 able to understand current progress, leave and return without losing work, recover from failure, and
 revise the latest request without corrupting history.
 
+## App evidence
+
+The timeline makes tool activity readable and keeps recovery actionable when the configured route
+cannot be reached.
+
+<div>
+  <img src="../assets/app-screenshots/04-standard-chat-tool-expanded.png" alt="Conversation with expanded tool activity and final response" width="220">
+  <img src="../assets/app-screenshots/17-error-recovery.png" alt="Conversation endpoint error with reconnect action" width="220">
+</div>
+
+*Figure: streamed tool/final output (left) and recoverable endpoint failure (right).*
+
 ## Scope
 
 - conversation creation and persistence;

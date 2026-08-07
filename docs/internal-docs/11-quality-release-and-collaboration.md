@@ -15,6 +15,20 @@ security, and release owners.
 - make release ownership and evidence explicit;
 - avoid documentation becoming detached from implementation.
 
+## App evidence
+
+The screenshot set complements automated coverage with concrete manual-device examples: a simulator
+camera capability fallback and an actionable reconnect error. Widget and Live Activity evidence is
+listed in the System Integration document; screenshots do not replace the required CI or device
+validation steps.
+
+<div>
+  <img src="../assets/app-screenshots/10-qr-scanner-photo-fallback.png" alt="Camera unavailable with QR photo fallback" width="220">
+  <img src="../assets/app-screenshots/17-error-recovery.png" alt="Conversation error with reconnect action" width="220">
+</div>
+
+*Figure: manual capability fallback (left) and recoverable network failure (right).*
+
 ## Test layers
 
 | Layer | Purpose | Typical ownership |

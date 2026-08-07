@@ -12,6 +12,19 @@ The client should connect to the intended agent over the best available verified
 compatible signed messages, survive ordinary malformed events, and return actionable errors when it
 cannot proceed.
 
+## App evidence
+
+The UI exposes route failure as an actionable endpoint error and keeps tool activity readable after
+successful delivery. These are presentation-level evidence only; the route and signing contracts
+remain defined by the protocol implementation and fixtures.
+
+<div>
+  <img src="../assets/app-screenshots/17-error-recovery.png" alt="Configured endpoint error with reconnect action" width="220">
+  <img src="../assets/app-screenshots/04-standard-chat-tool-expanded.png" alt="Successful tool activity and final response" width="220">
+</div>
+
+*Figure: actionable route failure (left) and readable protocol-driven activity (right).*
+
 ## Scope
 
 - agent address validation;

@@ -50,6 +50,27 @@ Do not use these documents as a substitute for:
 | [`10-settings-design-and-accessibility.md`](10-settings-design-and-accessibility.md) | Appearance, personalisation, code display, design system, accessibility |
 | [`11-quality-release-and-collaboration.md`](11-quality-release-and-collaboration.md) | Test strategy, CI, definition of done, release and cross-team workflow |
 
+## App screenshot evidence
+
+The module documents use a shared set of App/Widget/Live Activity screenshots so that each
+user-facing contract can be reviewed against a concrete surface. The source files live under
+[`../assets/app-screenshots/`](../assets/app-screenshots/); the screenshots are visual evidence,
+not a replacement for source, protocol fixtures, CI, or manual device checks.
+
+| Module document | Corresponding visual evidence |
+|---|---|
+| Product foundations | Agent home, conversation timeline, approval card |
+| Shell and navigation | Agent home and persistent conversations |
+| Agent management | Add-agent form and QR scanner fallback |
+| Chat and conversations | Tool-expanded timeline and network recovery |
+| Composer and input | Attachment-aware composer and reply input |
+| Interactive agent workflows | Approval card |
+| Network and protocol | Network recovery and tool activity |
+| Data, identity, and security | Agent address/endpoint entry and persisted conversation surface; implementation details remain source-owned |
+| System integrations | Home-screen Widget and Live Activity |
+| Settings, design, and accessibility | App chrome, semantic states, and typography shown in the core App screens; settings-specific checks remain manual/source evidence |
+| Quality, release, and collaboration | Camera capability fallback and reconnect error as manual-device evidence examples |
+
 ## Requirement language
 
 The words **MUST**, **SHOULD**, and **MAY** are used deliberately:

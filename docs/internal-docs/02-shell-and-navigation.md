@@ -16,6 +16,15 @@ A user should always understand:
 - which conversations are active or unread;
 - how to search, pin, rename, and delete saved items.
 
+## App evidence
+
+The agent home is the shell's primary visible destination. It shows the connected status, the
+conversation list, the new-chat entry point, and search affordance together.
+
+<p><img src="../assets/app-screenshots/02-agent-home-conversations.png" alt="Agent home with connected status, saved conversation, new chat, and search" width="260"></p>
+
+*Figure: agent-first shell and persistent conversation entry point.*
+
 ## Scope
 
 - first-run and returning-user launch states;

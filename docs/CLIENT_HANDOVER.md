@@ -115,6 +115,28 @@ The app is not responsible for:
 
 ---
 
+### 2.4 App UI evidence
+
+The handover package includes the following screenshots as visual anchors for the user-facing
+surfaces described in this document. They are captured App, Widget, Live Activity, and simulator
+fallback states from the current iOS build. Use the live app as the source of truth when behavior or
+copy has changed; the screenshots make the corresponding product area easy to identify during
+handover and review.
+
+| Product area | App evidence | What it demonstrates |
+|---|---|---|
+| Agent home and persistent conversations | <img src="assets/app-screenshots/02-agent-home-conversations.png" alt="Agent home with connected status and a saved conversation" width="220"> | Agent-first navigation, connection status, conversation list, new chat, and search. |
+| Add agent and QR entry | <img src="assets/app-screenshots/09-add-agent-qr-setup.png" alt="Add agent sheet with QR entry" width="220"> | Address, name, endpoint, QR entry, and review-before-save flow. |
+| QR scanner fallback | <img src="assets/app-screenshots/10-qr-scanner-photo-fallback.png" alt="QR scanner photo fallback" width="220"> | Simulator/device capability fallback for choosing a QR image from Photos. |
+| Conversation timeline | <img src="assets/app-screenshots/04-standard-chat-tool-expanded.png" alt="Conversation with expanded tool activity and final response" width="220"> | User turn, tool activity, readable assistant output, copy/share actions, and composer. |
+| Human-in-the-loop approval | <img src="assets/app-screenshots/05-approval-card.png" alt="Approval card with approve, always, and skip actions" width="220"> | Explicit approval choices and attachment-aware conversation context. |
+| Widget shortcut | <img src="assets/app-screenshots/13-home-widget-crop.png" alt="ConnectOnion home-screen widget" width="220"> | Minimal App Group snapshot, new-chat shortcut, and suggested prompt entry point. |
+| Live Activity | <img src="assets/app-screenshots/16-live-activity-crop.png" alt="Completed reply Live Activity" width="220"> | System-surface reply status outside the app and the completed state. |
+| Network recovery | <img src="assets/app-screenshots/17-error-recovery.png" alt="Conversation endpoint error with reconnect action" width="220"> | Actionable endpoint failure, preserved conversation surface, and reconnect affordance. |
+
+The asset inventory and evidence classifications are maintained in
+[`App screenshot index`](assets/app-screenshots/README.md).
+
 ## 3. System context
 
 ```mermaid

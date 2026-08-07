@@ -5,6 +5,20 @@
 This document defines user preferences, personalisation behavior, visual-system consistency,
 typography/code presentation, motion, and accessibility expectations across the application.
 
+## App evidence
+
+The core App surfaces below show the warm canvas, semantic status treatments, typography hierarchy,
+and distinct user/assistant/tool presentation used by the design contract. The current shared asset
+set does not include a dedicated settings sheet; settings-specific persistence, Dynamic Type,
+VoiceOver, and reduced-motion checks remain manual/source evidence.
+
+<div>
+  <img src="../assets/app-screenshots/02-agent-home-conversations.png" alt="ConnectOnion app chrome and typography on agent home" width="220">
+  <img src="../assets/app-screenshots/04-standard-chat-tool-expanded.png" alt="Typography hierarchy and semantic tool status in chat" width="220">
+</div>
+
+*Figure: app chrome/brand treatment (left) and chat typography/status hierarchy (right).*
+
 ## Scope
 
 - light/dark/system appearance;

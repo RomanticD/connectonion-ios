@@ -26,6 +26,19 @@ The product should enable users to:
 - trust that their local client identity remains stable;
 - recover from ordinary network and protocol failures without losing valid conversation state.
 
+## App evidence
+
+The primary product journey is visible in the connected agent home and in-chat human-control
+surfaces below. These screenshots anchor the product goals; implementation and protocol behavior
+remain authoritative in the source and tests.
+
+<div>
+  <img src="../assets/app-screenshots/02-agent-home-conversations.png" alt="Connected agent home with persistent conversation" width="220">
+  <img src="../assets/app-screenshots/05-approval-card.png" alt="Approval card in a conversation" width="220">
+</div>
+
+*Figure: agent-first continuity (left) and visible human control (right).*
+
 ## Primary users
 
 ### Agent user

@@ -10,6 +10,18 @@ Live Activity, Dynamic Island, and the app-side coordination that keeps these su
 System surfaces should provide fast, privacy-conscious shortcuts and status while always returning
 the user to the authoritative app experience.
 
+## App evidence
+
+The Widget provides a new-chat shortcut and suggestion, while the Live Activity exposes reply status
+outside the app without replacing the in-app conversation as the authoritative surface.
+
+<div>
+  <img src="../assets/app-screenshots/13-home-widget-crop.png" alt="ConnectOnion home-screen widget with new chat shortcut" width="240">
+  <img src="../assets/app-screenshots/16-live-activity-crop.png" alt="Completed reply Live Activity" width="240">
+</div>
+
+*Figure: Widget entry point (left) and Live Activity status (right).*
+
 ## Scope
 
 - App Group data sharing;

@@ -7,6 +7,15 @@ decision or provide information during an agent run. These workflows are safety-
 continuity-critical because they interrupt ordinary streaming and must resume the correct remote
 session.
 
+## App evidence
+
+Approval requests are presented as a dedicated card with the requested tool, context, and distinct
+choices rather than as an undifferentiated chat message.
+
+<p><img src="../assets/app-screenshots/05-approval-card.png" alt="Approval card with approve, always, and skip actions" width="260"></p>
+
+*Figure: explicit human-in-the-loop approval surface.*
+
 ## Scope
 
 - ask-user requests;
