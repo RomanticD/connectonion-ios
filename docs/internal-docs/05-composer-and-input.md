@@ -16,9 +16,12 @@ sent, and avoid losing their draft because an optional input source fails.
 The conversation surface shows the attachment strip above the user turn and keeps the reply
 composer available below the timeline.
 
-<p><img src="../assets/app-screenshots/05-approval-card.png" alt="Conversation with README and image attachments and reply composer" width="260"></p>
+<div>
+  <img src="../assets/app-screenshots/05-approval-card.png" alt="Conversation with README and image attachments and reply composer" width="220">
+  <img src="../assets/app-screenshots/18-skill-command-palette.png" alt="Slash skill command palette above the composer" width="220">
+</div>
 
-*Figure: attachment-aware input context and the composer used for the next response.*
+*Figure: attachment-aware input (left) and slash-command discovery (right).*
 
 ## Scope
 

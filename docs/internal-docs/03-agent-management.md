@@ -19,9 +19,10 @@ reported as an explicit scanner fallback rather than an implicit failure.
 <div>
   <img src="../assets/app-screenshots/09-add-agent-qr-setup.png" alt="Add agent form with QR entry" width="220">
   <img src="../assets/app-screenshots/10-qr-scanner-photo-fallback.png" alt="QR scanner unavailable with Choose Photo fallback" width="220">
+  <img src="../assets/app-screenshots/19-agent-list-offline.png" alt="Agent list with an offline agent" width="220">
 </div>
 
-*Figure: add-agent review flow (left) and QR capability fallback (right).*
+*Figure: add-agent review flow, QR capability fallback, and offline status presentation.*
 
 ## Scope
 

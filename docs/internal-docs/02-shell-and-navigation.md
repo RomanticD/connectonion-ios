@@ -21,9 +21,12 @@ A user should always understand:
 The agent home is the shell's primary visible destination. It shows the connected status, the
 conversation list, the new-chat entry point, and search affordance together.
 
-<p><img src="../assets/app-screenshots/02-agent-home-conversations.png" alt="Agent home with connected status, saved conversation, new chat, and search" width="260"></p>
+<div>
+  <img src="../assets/app-screenshots/02-agent-home-conversations.png" alt="Agent home with connected status, saved conversation, new chat, and search" width="220">
+  <img src="../assets/app-screenshots/19-agent-list-offline.png" alt="Agent list with an offline agent" width="220">
+</div>
 
-*Figure: agent-first shell and persistent conversation entry point.*
+*Figure: agent-first shell (left) and offline status presentation (right).*
 
 ## Scope
 

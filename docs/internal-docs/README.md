@@ -60,11 +60,11 @@ not a replacement for source, protocol fixtures, CI, or manual device checks.
 | Module document | Corresponding visual evidence |
 |---|---|
 | Product foundations | Agent home, conversation timeline, approval card |
-| Shell and navigation | Agent home and persistent conversations |
-| Agent management | Add-agent form and QR scanner fallback |
-| Chat and conversations | Tool-expanded timeline and network recovery |
-| Composer and input | Attachment-aware composer and reply input |
-| Interactive agent workflows | Approval card |
+| Shell and navigation | Agent home, persistent conversations, and offline status |
+| Agent management | Add-agent form, QR scanner fallback, and offline status |
+| Chat and conversations | Tool-expanded timeline, multi-turn collapsed tools, and network recovery |
+| Composer and input | Attachment-aware composer, reply input, and skill command palette |
+| Interactive agent workflows | Pending approval card and resolved approvals in multi-turn history |
 | Network and protocol | Network recovery and tool activity |
 | Data, identity, and security | Agent address/endpoint entry and persisted conversation surface; implementation details remain source-owned |
 | System integrations | Home-screen Widget and Live Activity |

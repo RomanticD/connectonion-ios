@@ -12,9 +12,12 @@ session.
 Approval requests are presented as a dedicated card with the requested tool, context, and distinct
 choices rather than as an undifferentiated chat message.
 
-<p><img src="../assets/app-screenshots/05-approval-card.png" alt="Approval card with approve, always, and skip actions" width="260"></p>
+<div>
+  <img src="../assets/app-screenshots/05-approval-card.png" alt="Approval card with approve, always, and skip actions" width="220">
+  <img src="../assets/app-screenshots/20-multi-turn-collapsed-tools-approved.png" alt="Multi-turn conversation with collapsed tool calls and approved actions" width="220">
+</div>
 
-*Figure: explicit human-in-the-loop approval surface.*
+*Figure: pending approval choices (left) and resolved approvals in a multi-turn tool history (right).*
 
 ## Scope
 

@@ -20,9 +20,10 @@ cannot be reached.
 <div>
   <img src="../assets/app-screenshots/04-standard-chat-tool-expanded.png" alt="Conversation with expanded tool activity and final response" width="220">
   <img src="../assets/app-screenshots/17-error-recovery.png" alt="Conversation endpoint error with reconnect action" width="220">
+  <img src="../assets/app-screenshots/20-multi-turn-collapsed-tools-approved.png" alt="Multi-turn conversation with collapsed tool calls and approved actions" width="220">
 </div>
 
-*Figure: streamed tool/final output (left) and recoverable endpoint failure (right).*
+*Figure: streamed tool/final output, recoverable endpoint failure, and multi-turn collapsed tool history.*
 
 ## Scope
 

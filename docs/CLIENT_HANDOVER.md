@@ -126,10 +126,13 @@ handover and review.
 | Product area | App evidence | What it demonstrates |
 |---|---|---|
 | Agent home and persistent conversations | <img src="assets/app-screenshots/02-agent-home-conversations.png" alt="Agent home with connected status and a saved conversation" width="220"> | Agent-first navigation, connection status, conversation list, new chat, and search. |
+| Agent list and offline state | <img src="assets/app-screenshots/19-agent-list-offline.png" alt="Agent list with an offline agent" width="220"> | Offline status, stable agent identity, and the returning-user shell. |
 | Add agent and QR entry | <img src="assets/app-screenshots/09-add-agent-qr-setup.png" alt="Add agent sheet with QR entry" width="220"> | Address, name, endpoint, QR entry, and review-before-save flow. |
 | QR scanner fallback | <img src="assets/app-screenshots/10-qr-scanner-photo-fallback.png" alt="QR scanner photo fallback" width="220"> | Simulator/device capability fallback for choosing a QR image from Photos. |
 | Conversation timeline | <img src="assets/app-screenshots/04-standard-chat-tool-expanded.png" alt="Conversation with expanded tool activity and final response" width="220"> | User turn, tool activity, readable assistant output, copy/share actions, and composer. |
+| Multi-turn conversation and collapsed tools | <img src="assets/app-screenshots/20-multi-turn-collapsed-tools-approved.png" alt="Multi-turn conversation with collapsed tool calls and approved actions" width="220"> | Persistent multi-turn history, collapsed tool groups, resolved approvals, and generated output. |
 | Human-in-the-loop approval | <img src="assets/app-screenshots/05-approval-card.png" alt="Approval card with approve, always, and skip actions" width="220"> | Explicit approval choices and attachment-aware conversation context. |
+| Skill command palette | <img src="assets/app-screenshots/18-skill-command-palette.png" alt="Slash skill command palette above the composer" width="220"> | Slash-command discovery and bounded composer interaction. |
 | Widget shortcut | <img src="assets/app-screenshots/13-home-widget-crop.png" alt="ConnectOnion home-screen widget" width="220"> | Minimal App Group snapshot, new-chat shortcut, and suggested prompt entry point. |
 | Live Activity | <img src="assets/app-screenshots/16-live-activity-crop.png" alt="Completed reply Live Activity" width="220"> | System-surface reply status outside the app and the completed state. |
 | Network recovery | <img src="assets/app-screenshots/17-error-recovery.png" alt="Conversation endpoint error with reconnect action" width="220"> | Actionable endpoint failure, preserved conversation surface, and reconnect affordance. |
